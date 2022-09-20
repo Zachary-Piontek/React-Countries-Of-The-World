@@ -1,0 +1,12 @@
+.country-display {
+    border: 1px solid black;
+    border-radius: 25%;
+    width: 50%;
+    justify-self: center;
+    min-width: 125px;
+    max-width: 150px;
+    min-height: 125px;
+    margin: 5px;
+    color: rgb(0, 136, 255);
+    background-color: black;
+}
