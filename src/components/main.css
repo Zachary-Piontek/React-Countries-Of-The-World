@@ -1,0 +1,11 @@
+.display-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    color: slategray;
+    background-color: burlywood;
+}
+
+h1 {
+    background-color: black;
+    color: aliceblue;
+}
