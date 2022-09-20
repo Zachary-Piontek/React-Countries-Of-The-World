@@ -5,12 +5,17 @@ import { getAllCountries } from '../services/fetchCountries';
 export default function useCountry() {
   const [country, setCountry] = useState([]);
   const [area, setArea] = useState('all');
+  const [error, setError] = useState('');
 
   useEffect(() => {
-    const getCountries = async () => {
-      const resp = await getAllCountries();
-      setCountry(resp);
-    };
+    async function getCountries() {
+      try {
+        const resp = await getAllCountries();
+        setCountry(resp);
+      } catch (e) {
+        setError(e.message);
+      }
+    }
     
     getCountries();
   }, []);
@@ -20,5 +25,5 @@ export default function useCountry() {
     return country.filter((C) => C.continent === area);
   };
     
-  return { country, filterCountries, area, setArea };
+  return { country, filterCountries, area, setArea, error };
 }

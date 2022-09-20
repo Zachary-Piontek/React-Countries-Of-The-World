@@ -4,13 +4,14 @@ import CountryDisplay from './useCountries';
 import './main.css';
 
 export default function Main() {
-  const { filterCountries, area, setArea } = useCountry();
+  const { filterCountries, area, setArea, error } = useCountry();
 
   return ( 
     <>
       <div className='main-page'>
         <div className='header'>
           <h1>Countries of the World</h1>
+          <h3>{error}</h3>
         </div>
         <select value={area} onChange={(event) => {
           setArea(event.target.value);
