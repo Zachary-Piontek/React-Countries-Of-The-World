@@ -3,11 +3,11 @@ import useCountry from '../hooks/useCountries';
 import CountryDisplay from './useCountries';
 
 export default function Main() {
-  const allCountries = useCountry();
+  const { filterCountries } = useCountry();
 
   return ( 
     <section>
-      {allCountries.map((country) => (
+      {filterCountries().map((country) => (
         <CountryDisplay {...country} key={country.id} />
       ))}
     </section>
