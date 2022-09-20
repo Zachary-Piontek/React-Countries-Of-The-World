@@ -1,6 +1,15 @@
 import React from 'react';
-import { getAllCountries } from '../services/fetchCountries';
+import useCountry from '../hooks/useCountries';
+import CountryDisplay from './useCountries';
 
 export default function Main() {
-  getAllCountries();
+  const allCountries = useCountry();
+
+  return ( 
+    <section>
+      {allCountries.map((country) => (
+        <CountryDisplay {...country} key={country.id} />
+      ))}
+    </section>
+  );
 }
