@@ -17,7 +17,7 @@ export default function useCountry() {
 
   const filterCountries = () => {
     if (area === 'all') return country;
-    return country.filter((C) => C.area === area);
+    return country.filter((C) => C.continent === area);
   };
     
   return { country, filterCountries, area, setArea };
